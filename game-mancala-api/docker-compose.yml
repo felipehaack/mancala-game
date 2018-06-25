@@ -1,0 +1,16 @@
+version: '3.5'
+
+services:
+
+  api:
+    build:
+      context: .
+      dockerfile: ./tools/Dockerfile-gradle
+    command: gradle "bootRun"
+    volumes:
+      - ./:/app
+      - /app/.gradle
+    ports:
+      - 9001:9001
+    tty: true
+    stdin_open: true
