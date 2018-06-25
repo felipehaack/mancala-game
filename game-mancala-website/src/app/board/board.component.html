@@ -1,0 +1,33 @@
+<div class="center">
+  <div class="mat-h1">Board Page</div>
+
+  <div *ngIf="board">
+    <div class="mat-h4">Current Game Progress</div>
+    <div class="mat-h4" *ngIf="board.winner">Winner: {{board.winner}}</div>
+    <div class="mat-h4" *ngIf="board.currentPlayer && !board.winner">Player: {{board.currentPlayer}}</div>
+
+    <div class="board">
+      <div class="collector mat-elevation-z4">
+        <app-card [boardId]="board.id" [id]="collectorPlayer1.index" [stone]="collectorPlayer1.stones"></app-card>
+      </div>
+
+      <div class="pits">
+        <div class="pits-top">
+          <app-card class="card mat-elevation-z4" *ngFor="let item of boardPlayer1" [boardId]="board.id"
+                    [id]="item.index"
+                    [stone]="item.stones"></app-card>
+        </div>
+
+        <div class="pits-bottom">
+          <app-card class="card mat-elevation-z4" *ngFor="let item of boardPlayer2" [boardId]="board.id"
+                    [id]="item.index"
+                    [stone]="item.stones"></app-card>
+        </div>
+      </div>
+
+      <div class="collector mat-elevation-z4">
+        <app-card [boardId]="board.id" [id]="collectorPlayer2.index" [stone]="collectorPlayer2.stones"></app-card>
+      </div>
+    </div>
+  </div>
+</div>

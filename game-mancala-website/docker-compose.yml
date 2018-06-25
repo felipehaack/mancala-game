@@ -1,0 +1,10 @@
+version: '3.5'
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: ./tools/Dockerfile
+    command: "npm start"
+    ports:
+      - 9000:9000
