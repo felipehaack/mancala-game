@@ -1,0 +1,47 @@
+<form (ngSubmit)="createGame()" style="text-align: center">
+  <div class="mat-h1">Mancala Game</div>
+  <div class="input-pad-custom">
+    <mat-form-field>
+      <mat-select placeholder="Board Size"
+                  [(value)]="boardCreate.boardSize"
+                  [formControl]="boardSizeControl"
+                  required>
+        <mat-option>--</mat-option>
+        <mat-option value="2">2</mat-option>
+        <mat-option value="3">3</mat-option>
+        <mat-option value="4">4</mat-option>
+        <mat-option value="5">5</mat-option>
+        <mat-option value="6">6</mat-option>
+      </mat-select>
+      <mat-error *ngIf="boardSizeControl.hasError('required')">
+        Please select the size of the board
+      </mat-error>
+    </mat-form-field>
+  </div>
+
+  <div class="input-pad-custom">
+    <mat-form-field>
+      <mat-select placeholder="Stones Per Pit"
+                  [(value)]="boardCreate.stonesPerPit"
+                  [formControl]="stonesPerPitControl"
+                  required>
+        <mat-option>--</mat-option>
+        <mat-option value="1">1</mat-option>
+        <mat-option value="2">2</mat-option>
+        <mat-option value="3">3</mat-option>
+        <mat-option value="4">4</mat-option>
+        <mat-option value="5">5</mat-option>
+        <mat-option value="6">6</mat-option>
+      </mat-select>
+      <mat-error *ngIf="stonesPerPitControl.hasError('required')">
+        Please select the amount of the stones per pit
+      </mat-error>
+    </mat-form-field>
+  </div>
+
+  <div class="button-row input-pad-custom">
+    <button type="submit" mat-raised-button color="primary">
+      Create Board
+    </button>
+  </div>
+</form>
