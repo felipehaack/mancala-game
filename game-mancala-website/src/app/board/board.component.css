@@ -1,0 +1,40 @@
+.center {
+  text-align: center;
+}
+
+.board {
+  display: flex;
+  justify-content: center;
+}
+
+.collector {
+  width: 50px;
+  padding: 10px;
+  background-color: dodgerblue;
+  font-size: 20px;
+  text-align: center;
+  border: 1px solid;
+}
+
+.pits {
+  display: flex;
+  flex-direction: column;
+}
+
+.pits-top {
+  display: flex;
+  background-color: bisque;
+}
+
+.pits-bottom {
+  display: flex;
+  background-color: cadetblue;
+}
+
+.card {
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  border: 1px solid;
+  cursor: pointer;
+}
