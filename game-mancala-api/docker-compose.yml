@@ -12,5 +12,3 @@ services:
       - /app/.gradle
     ports:
       - 9001:9001
-    tty: true
-    stdin_open: true
